@@ -1,0 +1,28 @@
+train:
+  random_sate: 42
+  images_path: '../data/images'
+  groundtruth_path: '../data/groundtruth'
+  size: [512, 512]
+  train_size: 0.9
+  batch_size: 5
+  shuffle: True
+  epochs: 30
+  unet_bce_dict_path: '../report/unet_bce_dict.pkl'
+  unet_dice_dict_path: '../report/unet_dice_dict.pkl'
+  unet_focal_dict_path: '../report/unet_focal_dict.pkl'
+  unet_lova_dict_path: '../report/unet_lova_dict.pkl'
+  deeplab_bce_dict_path: '../report/deeplab_bce_dict.pkl'
+  deeplab_dice_dict_path: '../report/deeplab_dice_dict.pkl'
+  deeplab_focal_dict_path: '../report/deeplab_focal_dict.pkl'
+  deeplab_lova_dict_path: '../report/deeplab_lova_dict.pkl'
+  deeplab_bce_weights_path: '../models/deeplab_bce_weights.pth'
+
+eval:
+  eval_image_path: '../data/eval/screen_eval.png'
+  out_mask: '../data/output/output_mask.png'
+
+frontend:
+  main_image: '../data/frontend/main_image.png'
+
+endpoints:
+  prediction_from_file: 'http://fastapi:8000/predict'
